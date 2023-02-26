@@ -1,0 +1,42 @@
+.sidebar
+{
+    background-color: black;
+    color: #fff;
+    width: 15%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    
+}
+
+.sidebar.active
+{
+    width: 5%;
+}
+
+.content
+{
+    width: 81%;
+    margin-left: 17%;
+    margin-right: 2%;
+}
+
+.content.active
+{
+    width: 93%;
+    margin-left: 7%;
+}
+
+.header
+{
+    margin-left: 15%;
+}
+.header.active
+{
+    margin-left: 5%;
+}
+
+nav .navbar-brand
+{
+    margin-left: 30px;
+}

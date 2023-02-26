@@ -1,0 +1,29 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 15px;
+}
+
+.login-section
+{
+    margin-top: 12%;
+    padding: 20px;
+}
+
+.login-section .logo-section
+{
+    padding: 15px;
+    background: rgb(15, 15, 145);
+    border-radius: 25px 0px 0px 25px;
+    
+}
+
+.login-section .login-form
+{
+    padding: 25px 40px;
+}
+
+

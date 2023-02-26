@@ -1,0 +1,317 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 15px;
+
+}
+
+
+.login-section
+{
+    margin-top: 12%;
+    padding: 20px;
+}
+
+.login-section .logo-section
+{
+   
+    background: rgb(15, 15, 145);
+    border-radius: 25px 0px 0px 25px;
+    padding-top: 10%;
+    
+}
+
+.login-section .login-form
+{
+    padding: 25px 40px;
+}
+
+.main
+{
+    margin: 20px;
+    border-radius: 25px;
+    display: flex;
+}
+
+.sidebar
+{
+    width: 15%;
+    height: 95vh;
+    border-radius: 25px 0px 0px 25px;
+    padding: 10px;
+    /* position: fixed; */
+    top: 0;
+}
+
+
+.sidebar-header
+{
+    background-color: rgb(15, 15, 145);
+    color: #fff;
+    margin: -10px;
+    padding-top: 2px;
+    border-radius: 25px 0 0 0;
+    margin-bottom: 15px;
+}
+
+.sidebar-header .logo
+{
+    width: 70px;
+    height: 45px;
+    border-radius: 50px;
+    border: 3px solid #fff;
+    margin-top: 30px;
+    margin-left: 29%;
+    
+    
+}
+
+.sidebar-footer
+{
+    background-color: rgb(15, 15, 145);
+    color: #fff; 
+    margin: -10px;
+    padding-top: 2px;
+    position: absolute;
+    width: 14%;
+    bottom: 28px;
+    border-radius: 0 0 0 25px;
+}
+
+.sidebar .sidebar-links
+{
+    color: #000;  
+
+}
+
+.sidebar .sidebar-links a 
+{
+    color: #000;
+    text-decoration: none;
+    padding: 20px;
+
+}
+
+.sidebar .sidebar-links:hover
+{
+    background: rgb(173, 173, 227);
+}
+.sidebar .sidebar-links a .active
+{
+    color: #00f;
+}
+
+.sidebar .sidebar-links:hover a{
+    color: #fff;
+}
+
+
+
+/* footer */
+.footer
+{
+    color: #fff;
+    border-radius: 0 0 25px 0;
+    position: absolute;
+    bottom: 19px;
+    width: 82%;
+    /* margin-left: -16+px; */
+}
+
+.content
+{
+    width: 84%;
+    margin-left:5px;
+}
+
+.navbar
+{
+    background-color: rgb(15, 15, 145);
+    position: relative;
+    color: white;
+    width: 100%;
+    top: 0;
+    border-radius: 0 25px 0 0 ;
+    display: flex;
+    
+}
+
+.profile
+{
+    display: flex;
+}
+
+.inner-content
+{
+    height: 82vh;
+    overflow: hidden;
+    overflow-y: scroll;
+    padding: 20px;
+}
+
+.inner-content::-webkit-scrollbar
+{
+    width: 1vw;
+}
+.inner-content::-webkit-scrollbar-thumb
+{
+    background-color: gray;
+}
+
+.inner-content::-webkit-scrollbar-track
+{
+    background-color: #fff;
+}
+
+/* sidebar small */
+.sidebar.active
+{
+    width: 7%;
+    padding: 5px;
+}
+
+.sidebar.active .sidebar-links a span
+{
+    display: none;
+}
+
+.sidebar.active .sidebar-footer
+{
+    width: 7%;
+    margin: -4px;
+    bottom: 22px;
+}
+
+.sidebar.active .large
+{
+    display: none;
+}
+.sidebar.active .small
+{
+    display: block;
+}
+
+.sidebar.active .sidebar-header
+{
+    margin: -5px;
+}
+.sidebar.active .sidebar-header .logo
+{
+    margin-left: 15%;
+}
+/* sidebar small */
+
+/* content small */
+.content.active
+{
+    width: 92%;
+    margin-left: 5px;
+}
+
+.content.active .footer
+{
+    width: 90%;
+    /* margin-left: 7%; */
+    
+}
+/* content small */
+
+/* inner content */
+.card
+{
+    height: 20x;
+    padding-top: 5px;
+}
+.card .icon
+{
+    margin-left: 42%;
+    font-size: 1.5rem;
+    color: rgb(26, 26, 145);
+}
+
+.card .card-footer
+{
+    text-decoration: none;
+    color: #fff;
+    background-color: rgb(6, 103, 103);
+    margin-top: -20px;
+}
+
+.card h5
+{
+    font-size: 12px;
+}
+
+.card .doc:hover
+{
+    background-color: rgb(50, 190, 190);
+}
+.card .patient:hover
+{
+    background-color: rgb(199, 75, 9);
+}
+.card .equip:hover
+{
+    background-color: rgb(15, 15, 145);
+}
+.forms
+{
+    width: 90%;
+    /* height: 50vh; */
+    overflow: hidden;
+}
+.carousel
+{
+    margin-left: 10px;
+    margin-top: 20px;
+    background-color: #fff;
+    height: 60vh;
+    padding: 10px;
+
+}
+#calendar
+{
+    height: 350px;
+}
+
+.user-profile
+{
+    margin-left:30%;
+}
+
+.form label
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+.form input,.form select
+{
+    border: 0.5px solid rgb(15, 15, 145);
+    height: 30px;
+    text-decoration: none;
+}
+
+form.btn
+{
+    width: 100px;
+    
+}
+
+#table, #table thead tr th,#table tbody tr td
+{
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid rgb(15, 15, 145);
+
+}
+#table
+{
+    margin-top: -20px;
+}
+
+
+/* inner content */
