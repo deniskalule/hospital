@@ -313,5 +313,19 @@ form.btn
     margin-top: -20px;
 }
 
+.changeable-section a
+{
+    color: #fff;
+}
+
+/* .changeable-section .active
+{
+    color: black;
+    background-color: #fff;
+    border-radius: 25px;
+    border: 2px solid rgb(15, 15, 145);
+} */
+
+
 
 /* inner content */
