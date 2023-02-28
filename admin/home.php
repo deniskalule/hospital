@@ -1,4 +1,5 @@
 <?php
+include("./includes/session.php");
 include("./includes/header.php");
 ?>
 
@@ -22,7 +23,16 @@ include("./includes/header.php");
                                 <div class="card text-center bg-white shadow">
                                     <i class="fas fa-users    icon"></i>
                                     <div class="card-body">
-                                        <h5 class="card-title">DOCTORS</h5>
+                                        <h5 class="card-title">
+                                           <span style="font-size: 20px;">
+                                            <?php
+                                            $query1 = $conn->query("select doc_id from doctors");
+                                            
+                                            echo $query1->num_rows;
+                                            
+                                            ?>
+                                           </span>
+                                        DOCTORS</h5>
                                     </div>
                                     <a href="doctor.php" class="card-footer doc">More info <i class="fas fa-arrow-circle-right    "></i></a>
                                 </div>
@@ -94,7 +104,14 @@ include("./includes/header.php");
                                 <i class="fas fa-user-circle    " style="font-size: 50px;"></i>
                             </div>
                             <div class="user-details text-center">
-                                <h6>{Username}</h6>
+                                <?php
+                                $select = "select name,email from admin";
+                                $query = $conn->query($select);
+                    
+                                $row = $query->fetch_assoc();
+                                ?>
+                                <h6><?= $row['name'] ?></h6>
+                                <p><?= $row['email']; ?></p>
                             </div>
                             <input name="" id="" class="btn btn-primary form-control" type="button" value="Edit Profile">
                          </div>

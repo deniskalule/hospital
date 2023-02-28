@@ -5,12 +5,19 @@
     <div class="profile">
         <div class="username mr-5">
             <i class="fas fa-user-circle    "></i>
-            <span>{Username}</span>
+            <?php
+            $select = "select name from admin";
+            $query = $conn->query($select);
+
+            $row = $query->fetch_assoc();
+
+            ?>
+            <span><?= $row['name'] ?></span>
         </div>
-        <div class="logout text-danger mr-5">
+        <a href="logout.php" class="logout text-danger mr-5" style="cursor: pointer; text-decoration:none;">
             <i class="fas fa-power-off   "></i>
             <span>Logout</span>
-        </div>
+        </a>
     </div>
     
 </nav>

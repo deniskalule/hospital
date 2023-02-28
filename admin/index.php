@@ -1,5 +1,11 @@
 <?php
 
+    session_start();
+  	if(isset($_SESSION['admin'])){
+    	header('location:home.php');
+  	}
+
+
 include("./includes/header.php");
 
 ?>
@@ -12,15 +18,25 @@ include("./includes/header.php");
     </div>
     <div class="col-lg-3 col-md-3 login-form shadow">
         <h5 class="text-center mb-5">Admin Login</h5>
-        <form action="" class="form form-sm" method="post" enctype="multipart/form-data">
+        <?php
+          if(isset($_SESSION['error'])){
+            echo "
+              <div class='alert alert-danger text-center'>
+                <p style='font-size: 12px;''>".$_SESSION['error']."</p> 
+              </div>
+            ";
+            unset($_SESSION['error']);
+          }
+        ?>
+        <form action="login.php" class="form form-sm" method="post" enctype="multipart/form-data">
             <div class="form-group">
               <label for="">Username: </label>
-              <input type="text" name="username" id="" class="form-control btn-sm" placeholder="" aria-describedby="helpId">
+              <input type="text" name="username" id="" class="form-control btn-sm" required>
               
             </div>
             <div class="form-group">
               <label for="">Password:</label>
-              <input type="text" name="password" id="" class="form-control btn-sm" placeholder="" aria-describedby="helpId">
+              <input type="text" name="password" id="" class="form-control btn-sm" placeholder=""required>
               
             </div>
             <input name="login" id="" class="btn btn-dark form-control" type="submit" value="Login">
