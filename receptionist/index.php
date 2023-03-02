@@ -1,5 +1,8 @@
 <?php
-
+session_start();
+if(isset($_SESSION['user'])){
+  header('location:home.php');
+}
 include("./includes/header.php");
 
 ?>
@@ -12,15 +15,25 @@ include("./includes/header.php");
     </div>
     <div class="col-lg-3 col-md-3 login-form shadow">
         <h5 class="text-center mb-5">Receptionist Login</h5>
-        <form action="" class="form form-sm" method="post" enctype="multipart/form-data">
+        <?php
+          if(isset($_SESSION['error'])){
+            echo "
+              <div class='alert alert-danger text-center'>
+                <p style='font-size: 12px;''>".$_SESSION['error']."</p> 
+              </div>
+            ";
+            unset($_SESSION['error']);
+          }
+        ?>
+        <form action="login.php" class="form form-sm" method="post" enctype="multipart/form-data">
             <div class="form-group">
-              <label for="">Username: </label>
-              <input type="text" name="username" id="" class="form-control btn-sm" placeholder="" aria-describedby="helpId">
+              <label for="">Staff ID: </label>
+              <input type="text" name="staffid" id="" class="form-control btn-sm" placeholder="" aria-describedby="helpId">
               
             </div>
             <div class="form-group">
               <label for="">Password:</label>
-              <input type="text" name="password" id="" class="form-control btn-sm" placeholder="" aria-describedby="helpId">
+              <input type="password" name="password" id="" class="form-control btn-sm" placeholder="" aria-describedby="helpId">
               
             </div>
             <input name="login" id="" class="btn btn-primary" type="submit" value="Login">
