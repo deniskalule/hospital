@@ -116,7 +116,7 @@
     color: #fff;
     border-radius: 0 0 25px 0;
     position: absolute;
-    bottom: 19px;
+    bottom: 0px;
     width: 82%;
     /* margin-left: -16+px; */
 }
@@ -257,12 +257,7 @@
 {
     background-color: rgb(15, 15, 145);
 }
-.forms
-{
-    width: 90%;
-    /* height: 50vh; */
-    overflow: hidden;
-}
+
 .carousel
 {
     margin-left: 10px;

@@ -59,7 +59,60 @@ include("./includes/header.php");
 
                         <div class="row">
                             <div class="col-lg-12 forms">
-                                
+                                <!-- patient add forms -->
+                                <h5 class="text-left mt-4">Add patient</h5>
+                                <hr>
+                                <form action="./backend/patientadd.php" class="form patient rounded shadow pl-2 pr-2" method="post">
+                                    <div class="row pl-2 pr-2">
+                                        <div class="form-group col-12">
+                                            <label for="">Full name</label>
+                                            <input type="text" name="fname" id="" class="form-control btn-sm" required>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="row pl-2 pr-2">
+                                        <div class="form-group col-6">
+                                            <label for="">Contact</label>
+                                            <input type="text" name="contact" id="" class="form-control btn-sm" required>
+                                        </div>
+                                        <div class="form-group col-6">
+                                            <label for="">Date of birth</label>
+                                            <input type="date" name="dob" id="" class="form-control btn-sm" required>
+                                        </div>
+                                    </div>
+                                    <div class="row pl-2 pr-2">
+                                        <div class="form-group col-6">
+                                            <label for="">Gender</label>
+                                            <select class="form-control" name="gender" id="" required>
+                                            <option value="" selected>Select ...</option>
+                                            <option value="male">Male</option>
+                                            <option value="female">Female</option>
+                                            </select>
+                                            
+                                        </div>
+                                        <div class="form-group col-6">
+                                            <label for="">Address</label>
+                                            <input type="text" name="address" id="" class="form-control btn-sm" required>
+                                        </div>
+                                    
+                                    </div>
+                                    <div class="row pl-2 pr-2">
+                                        <div class="form-group col-12">
+                                        <label for="">Reason</label>
+                                        <textarea style="border: 0.5px solid rgb(15, 15, 145);" class="form-control" name="reason" id="" rows="2"></textarea>
+                                        </div>
+                                    
+                                    </div>
+
+                                    
+
+                                    <div class="button ">
+                                        <center>
+                                        <input type="submit" class="btn btn-dark mb-3" name="add" value="Add patient">
+                                        </center>
+                                    </div>
+                                </form> 
+                                <!-- patient add forms -->
                             </div>
                     
                         </div>
@@ -92,9 +145,9 @@ include("./includes/header.php");
                         <!-- calendar -->
                         
                        <div class="row">
-                        <div class="col-12">
-                            <div id="calendar" class="mt-3">
-                        </div>
+                        <!-- <div class="col-12">
+                            <div id="calendar" class="bg-dark text-white p-3 text-center mt-3" style="width: 200px;">
+                        </div> -->
                        </div>
 
                        </div>
