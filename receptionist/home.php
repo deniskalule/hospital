@@ -41,7 +41,17 @@ include("./includes/header.php");
                                 <div class="card text-center bg-white shadow">
                                     <i class="fas fa-users    icon"></i>
                                     <div class="card-body">
-                                        <h5 class="card-title">PATIENTS</h5>
+                                        <h5 class="card-title">
+                                        <span style="font-size: 20px;">
+                                            <?php
+                                            $query1 = $conn->query("select patientID from patient");
+                                            
+                                            echo $query1->num_rows;
+                                            
+                                            ?>
+                                           </span>  
+                                        
+                                        PATIENTS</h5>
                                     </div>
                                     <a href="patients.php" class="card-footer patient">More info <i class="fas fa-arrow-circle-right    "></i></a>
                                 </div>

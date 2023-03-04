@@ -1,6 +1,7 @@
 <div class="sidebar shadow ">
     <div class="sidebar-header">
         <div class="logo">
+            <h5 class="text-white text-center p-2">BCC</h5>
         </div>
         <p class="text-center large" style="font-size:12px;">Byeyale Citizens Clinic</p>
         <p class="text-center small" style="font-size:12px; display:none;">BCC</p>
@@ -18,10 +19,7 @@
         <a href="patients.php" class="mt-2"><i class="fas fa-user    "></i> <span>Patients</span> </a>
         <hr>
     </div>
-    <div class="sidebar-links">
-        <a href="doctor.php" class="mt-2"><i class="fas fa-users    "></i> <span>Doctors</span> </a>
-        <hr>
-    </div>
+    
     <div class="sidebar-links">
         <a href="bills.php" class="mt-2"><i class="fas fa-money-bill    "></i> <span>Bills</span> </a>
         <hr>

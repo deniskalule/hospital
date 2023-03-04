@@ -58,6 +58,43 @@ else{
     $_SESSION['error'] = 'Fill up add form first';
 }
 
+if(isset($_POST['update']))
+{
+    $doc_id = $_POST['doc_id'];
+    $sname = $_POST['sname'];
+    $lname = $_POST['lname'];
+    $email = $_POST['email'];
+    $contact = $_POST['contact'];
+    $gender = $_POST['gender'];
+    $address = $_POST['address'];
+    $role = $_POST['role'];
+    $department = $_POST['department'];
+    $mod_date = date('y/m/d');
+
+    $update = "update doctors set surname = '$sname',other_names = '$lname', email ='$email',contact='$contact',gender = '$gender', address='address', role='$role',department='$department',modification_date='$mod_date' where doc_id='$doc_id'";
+    if($conn->query($update)){
+        echo "success";
+        $_SESSION['success'] = 'Doctor updated successfully';
+    }
+    else{
+        
+        $_SESSION['error'] = 'error';
+    }
+
+
+}
+
+if(isset($_POST['delete']))
+{
+    $doc_id = $_POST['doc_id'];
+    $delete = "delete from doctors where doc_id = '$doc_id'";
+    if($conn->query($delete))
+    {
+        echo "success";
+        $_SESSION['success'] = 'Doctor deleted successfully';
+    }
+}
+
 header('location: ../doctor.php');
 
 

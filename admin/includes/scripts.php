@@ -80,4 +80,52 @@
   );
 </script>
 
+<!-- doctor -->
+<script>
+
+  $(document).ready(function () {
+    $('.doctor').click(function (e) { 
+      e.preventDefault();
+      document.getElementById("mytable").style.display = "none";
+      doc_id = $(this).attr('id');
+      // alert(doc_id);
+
+      $.ajax({
+        method: "post",
+        url: "backend/docdisplay.php",
+        data: {id:doc_id},
+        success: function (result) {
+          $('#display').html(result);
+        }
+      });
+    });
+  });
+  
+</script>
+
+<!-- patient -->
+<script>
+
+  $(document).ready(function () {
+    $('.patient').click(function (e) { 
+      e.preventDefault();
+      document.getElementById("mytable").style.display = "none";
+      patient_id = $(this).attr('id');
+      // alert(doc_id);
+
+      $.ajax({
+        method: "post",
+        url: "backend/patient_display.php",
+        data: {id:patient_id},
+        success: function (result) {
+          $('#display1').html(result);
+        }
+      });
+    });
+  });
+  
+</script>
+
+
+
 

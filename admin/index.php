@@ -36,7 +36,7 @@ include("./includes/header.php");
             </div>
             <div class="form-group">
               <label for="">Password:</label>
-              <input type="text" name="password" id="" class="form-control btn-sm" placeholder=""required>
+              <input type="password" name="password" id="" class="form-control btn-sm" placeholder=""required>
               
             </div>
             <input name="login" id="" class="btn btn-dark form-control" type="submit" value="Login">

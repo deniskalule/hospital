@@ -27,9 +27,7 @@ include("./includes/header.php");
                                 <li class="nav-item">
                                     <a class="nav-link active" style="font-size: 12px;" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Add Patient</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="profile-tab" style="font-size: 12px;" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Diagonise</a>
-                                </li>
+                               
                             </ul>
                         </div>
                     
@@ -37,11 +35,11 @@ include("./includes/header.php");
                         <!-- add patient -->
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                <form action="./backend/patientadd.php" class="form rounded" method="post">
+                                <form action="" class="form rounded">
                                     <div class="row pl-2 pr-2">
                                         <div class="form-group col-12">
                                             <label for="">Full name</label>
-                                            <input type="text" name="fname" id="" class="form-control btn-sm" required>
+                                            <input type="text" name="sname" id="" class="form-control btn-sm" required>
                                         </div>
                                         
                                     </div>
@@ -91,58 +89,14 @@ include("./includes/header.php");
                         <!-- add patient -->
 
                         <!-- diagonise -->
-                        <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                            <form action="" class="form rounded">
-                                <div class="row pl-2 pr-2">
-                                        <div class="form-group col-6">
-                                            <label for="">Patient ID</label>
-                                            <input type="text" name="patient_id" id="" class="form-control btn-sm" required>
-                                        </div>
-                                        <div class="form-group col-6">
-                                            <label for="">Laboratory ID</label>
-                                            <input type="text" name="lab_id" id="" class="form-control btn-sm" required>
-                                        </div>
-                                        
-                                    </div>
-                                    <div class="row pl-2 pr-2">
-                                        <div class="form-group col-12">
-                                            <label for="">Disease</label>
-                                            <input type="text" name="disease" id="" class="form-control btn-sm" required>
-                                        </div>
-                                    
-                                    </div>
-                                    <div class="row pl-2 pr-2">
-                                        
-                                        <div class="form-group col-12">
-                                            <label for="">Lab Results</label> 
-                                            <textarea name="results" id="" class="form-control" rows="2"></textarea>
-                                        </div>
-                                    </div>
-
-                                    <div class="row pl-2 pr-2">
-                                        <div class="form-group col-12">
-                                            <label for="">Doctor ID</label>
-                                            <input type="text" name="doc_id" id="" class="form-control btn-sm" required>
-                                        </div>
-                                    
-                                    </div>
-                                    
-
-                                    <div class="button ">
-                                        <center>
-                                        <input type="submit" class="btn btn-dark mb-3" name="add" value="Save">
-                                        </center>
-                                    </div>
-                            </form>
-                        </div>
+                        
                         </div>
                         
                         <!-- diagonise -->
                     
                     </div>
                 </div>
-                <div class="col-lg-7" id="display1">
-                    <div id="mytable">
+                <div class="col-lg-7">
                     <table class="table p-3" id="table">
                         <thead>
                             <tr>
@@ -167,7 +121,7 @@ include("./includes/header.php");
                                     <td><?= $row['Address']?></td>
                                     
                                     <td>
-                                        <a href="" id=<?=$row['patientID']?> class="btn patient btn-info btn-sm" style="font-size: 12px; padding-top: -10px; height:25px;">More ..</a>
+                                        <a href="" class="btn btn-info btn-sm" style="font-size: 12px; padding-top: -10px; height:25px;">More ..</a>
                                     </td>
                                 </tr>
 
@@ -179,7 +133,6 @@ include("./includes/header.php");
                             
                         </tbody>
                     </table>
-                    </div>
                 </div>
             </div>
         </div>

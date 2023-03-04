@@ -106,44 +106,48 @@ include("./includes/header.php");
                     </form>
                     </div>
                 </div>
-                <div class="col-lg-7">
-                    <table class="table p-3" id="table">
-                        <thead>
-                            <tr>
-                                <th>DOC_ID</th>
-                                <th>Name</th>
-                                <th>Contact</th>
-                                <th>Dept</th>
-                                <th>Role</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            $select = "select * from doctors order by doc_id ASC";
-                            $query = $conn->query($select);
-
-                            while($row = $query->fetch_assoc())
-                            {
-                                ?>
+                <div class="col-lg-7" id="display">
+                    <div id="mytable">
+                        <table class="table p-3" id="table">
+                            <thead>
                                 <tr>
-                                    <td><?= $row['doc_id']?></td>
-                                    <td><?= $row['surname'].' '.$row['other_names']?></td>
-                                    <td><?= $row['contact']?></td>
-                                    <td><?= $row['department']?></td>
-                                    <td><?= $row['role']?></td>
-                                    <td>
-                                        <a href="" class="btn btn-info btn-sm" style="font-size: 12px; padding-top: -10px; height:25px;">More ..</a>
-                                    </td>
+                                    <th>DOC_ID</th>
+                                    <th id="name">Name</th>
+                                    <th>Contact</th>
+                                    <th>Dept</th>
+                                    <th>Role</th>
+                                    <th>Actions</th>
                                 </tr>
-
+                            </thead>
+                            <tbody>
                                 <?php
-                            }
-                            ?>
-                        </tbody>
-                                
-                    </table>
-                </div>
+                                $select = "select * from doctors order by doc_id ASC";
+                                $query = $conn->query($select);
+
+                                while($row = $query->fetch_assoc())
+                                {
+                                    ?>
+                                    <tr>
+                                        <td><?= $row['doc_id']?></td>
+                                        <td><?= $row['surname'].' '.$row['other_names']?></td>
+                                        <td><?= $row['contact']?></td>
+                                        <td><?= $row['department']?></td>
+                                        <td><?= $row['role']?></td>
+                                        <td>
+                                            
+                                            
+                                            <a href="" id="<?= $row['doc_id']?>" class="btn doctor btn-info btn-sm" style="font-size: 12px; padding-top: -10px; height:25px;">More ..</a>
+                                        </td>
+                                    </tr>
+
+                                    <?php
+                                }
+                                ?>
+                            </tbody>
+                                    
+                        </table>
+                    </div>
+                    
             </div>
             
         </div>
