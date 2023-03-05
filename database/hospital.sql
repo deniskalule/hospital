@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 04, 2023 at 05:01 PM
+-- Generation Time: Mar 05, 2023 at 09:37 PM
 -- Server version: 10.4.16-MariaDB
 -- PHP Version: 7.4.12
 
@@ -33,15 +33,16 @@ CREATE TABLE `admin` (
   `password` varchar(255) NOT NULL,
   `id` int(11) NOT NULL,
   `name` varchar(30) NOT NULL,
-  `role` varchar(20) NOT NULL
+  `role` varchar(20) NOT NULL,
+  `modification_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`username`, `email`, `password`, `id`, `name`, `role`) VALUES
-('admin', 'admin@gmail.com', 'admin123', 1, 'Denis Kalule', 'admin');
+INSERT INTO `admin` (`username`, `email`, `password`, `id`, `name`, `role`, `modification_date`) VALUES
+('admin', 'odongo80@gmail.com', 'admin', 1, 'odongo arthur', 'admin', '2023-03-05');
 
 -- --------------------------------------------------------
 
@@ -192,7 +193,7 @@ CREATE TABLE `patient` (
 --
 
 INSERT INTO `patient` (`id`, `patientID`, `FullNames`, `Date_Of_Birth`, `Gender`, `Address`, `Disease`, `Contact`, `Creation_date`) VALUES
-(6, 'P001', 'Kabanda Ronald', '2023-02-28', 'male', 'kireka', 'fever', '0705098700', '2023-03-04'),
+(6, 'P001', 'Kabanda Ronald', '2023-02-28', 'Male', 'kireka', 'fever', '0705098700', '2023-03-04'),
 (7, 'P002', 'Namulindwa Olivia', '2022-11-03', 'female', 'Kyanamukaaka', 'weakness', '0756529218', '2023-03-04');
 
 -- --------------------------------------------------------
@@ -256,20 +257,21 @@ CREATE TABLE `staff` (
   `FullNames` varchar(20) NOT NULL,
   `Date_Of_Birth` date NOT NULL,
   `Address` varchar(20) NOT NULL,
-  `Gender` enum('M','F','O') NOT NULL,
-  `Contact` int(10) NOT NULL,
-  `Department` varchar(10) NOT NULL,
-  `creation_date` int(11) NOT NULL,
-  `password` int(11) NOT NULL
+  `Gender` varchar(10) NOT NULL,
+  `Contact` varchar(15) NOT NULL,
+  `Department` varchar(20) NOT NULL,
+  `creation_date` date NOT NULL,
+  `password` int(11) NOT NULL,
+  `modification_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `staff`
 --
 
-INSERT INTO `staff` (`staffID`, `FullNames`, `Date_Of_Birth`, `Address`, `Gender`, `Contact`, `Department`, `creation_date`, `password`) VALUES
-('STAFF001', 'Nakakande Maria', '2006-12-16', 'Mukono', '', 756529218, 'Receptioni', 28, 123456),
-('STAFF002', 'Jjunju Ivan', '2000-06-08', 'kireka', '', 705098700, 'Welfare', 1, 123456);
+INSERT INTO `staff` (`staffID`, `FullNames`, `Date_Of_Birth`, `Address`, `Gender`, `Contact`, `Department`, `creation_date`, `password`, `modification_date`) VALUES
+('STAFF001', 'Nakakande Maria', '2022-06-27', 'Mukono', 'Male', '756529218', 'Receptionist', '0000-00-00', 123456, '0000-00-00'),
+('STAFF002', 'Jjunju Ivan', '2023-02-28', 'kireka', 'Male', '705098700', 'Welfare', '0000-00-00', 123456, '0000-00-00');
 
 --
 -- Indexes for dumped tables
@@ -373,69 +375,6 @@ ALTER TABLE `admin`
 --
 ALTER TABLE `patient`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `bills`
---
-ALTER TABLE `bills`
-  ADD CONSTRAINT `bills_ibfk_1` FOREIGN KEY (`pharmacyID`) REFERENCES `pharmacy` (`pharmacyID`),
-  ADD CONSTRAINT `bills_ibfk_2` FOREIGN KEY (`patientID`) REFERENCES `patient` (`patientID`),
-  ADD CONSTRAINT `bills_ibfk_3` FOREIGN KEY (`laboratoryID`) REFERENCES `laboratory` (`laboratoryID`);
-
---
--- Constraints for table `equipments`
---
-ALTER TABLE `equipments`
-  ADD CONSTRAINT `equipments_ibfk_1` FOREIGN KEY (`staffID`) REFERENCES `staff` (`staffID`);
-
---
--- Constraints for table `impatient`
---
-ALTER TABLE `impatient`
-  ADD CONSTRAINT `impatient_ibfk_1` FOREIGN KEY (`patientID`) REFERENCES `patient` (`patientID`),
-  ADD CONSTRAINT `impatient_ibfk_2` FOREIGN KEY (`laboratoryID`) REFERENCES `laboratory` (`laboratoryID`),
-  ADD CONSTRAINT `impatient_ibfk_3` FOREIGN KEY (`roomID`) REFERENCES `room` (`roomID`);
-
---
--- Constraints for table `laboratory`
---
-ALTER TABLE `laboratory`
-  ADD CONSTRAINT `laboratory_ibfk_1` FOREIGN KEY (`patientID`) REFERENCES `patient` (`patientID`),
-  ADD CONSTRAINT `laboratory_ibfk_2` FOREIGN KEY (`doctorID`) REFERENCES `doctor` (`doctorID`);
-
---
--- Constraints for table `outpatient`
---
-ALTER TABLE `outpatient`
-  ADD CONSTRAINT `outpatient_ibfk_1` FOREIGN KEY (`patientID`) REFERENCES `patient` (`patientID`),
-  ADD CONSTRAINT `outpatient_ibfk_2` FOREIGN KEY (`doctorID`) REFERENCES `doctor` (`doctorID`);
-
---
--- Constraints for table `pharmacy`
---
-ALTER TABLE `pharmacy`
-  ADD CONSTRAINT `pharmacy_ibfk_1` FOREIGN KEY (`doctorID`) REFERENCES `doctor` (`doctorID`),
-  ADD CONSTRAINT `pharmacy_ibfk_2` FOREIGN KEY (`patientID`) REFERENCES `patient` (`patientID`),
-  ADD CONSTRAINT `pharmacy_ibfk_3` FOREIGN KEY (`laboratoryID`) REFERENCES `laboratory` (`laboratoryID`);
-
---
--- Constraints for table `room`
---
-ALTER TABLE `room`
-  ADD CONSTRAINT `room_ibfk_1` FOREIGN KEY (`patientID`) REFERENCES `patient` (`patientID`),
-  ADD CONSTRAINT `room_ibfk_2` FOREIGN KEY (`doctorID`) REFERENCES `doctor` (`doctorID`),
-  ADD CONSTRAINT `room_ibfk_3` FOREIGN KEY (`staffID`) REFERENCES `staff` (`staffID`);
-
---
--- Constraints for table `salary`
---
-ALTER TABLE `salary`
-  ADD CONSTRAINT `salary_ibfk_1` FOREIGN KEY (`staffID`) REFERENCES `staff` (`staffID`),
-  ADD CONSTRAINT `salary_ibfk_2` FOREIGN KEY (`doctorID`) REFERENCES `doctor` (`doctorID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
