@@ -128,10 +128,10 @@ include("./includes/header.php");
                         </div>
                     </div>
                     <div class="col-lg-4 ">
-                        <div class="row shadow rounded p-3">
+                        <div class="row shadow rounded p-3" id="display3">
                          <!-- user profile -->
                         
-                         <div class="user-profile text-center">
+                         <div class="user-profile text-center" id="profile">
                             <h6 class="text-center">
                                 RECEPTIONIST PROFILE
                             </h6>
@@ -149,7 +149,8 @@ include("./includes/header.php");
                                 <h6><?= $row['FullNames'] ?></h6>
                                 
                             </div>
-                            <input name="" id="" class="btn btn-primary form-control" type="button" value="Edit Profile">
+                            <a href="" id="<?= $row['staffID'] ?>" class="btn btn-primary profile1 btn-sm" style="width: 100px;">View Profile</a>
+
                          </div>
                         <!-- user profile -->
                         <!-- calendar -->

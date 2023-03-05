@@ -80,4 +80,26 @@
   );
 </script>
 
+<script>
+
+  $(document).ready(function () {
+    $('.profile1').click(function (e) { 
+      e.preventDefault();
+      document.getElementById("profile").style.display = "none";
+      staff_id = $(this).attr('id');
+      alert(staff_id);
+
+      $.ajax({
+        method: "post",
+        url: "backend/profile_display.php",
+        data: {id:staff_id},
+        success: function (result) {
+          $('#display3').html(result);
+        }
+      });
+    });
+  });
+  
+</script>
+
 

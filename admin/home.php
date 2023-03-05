@@ -19,6 +19,7 @@ include("./includes/header.php");
                 <div class="row">
                     <div class="col-lg-8">
                         <div class="row">
+                            <!-- cards -->
                             <div class="col-lg-4 col-md-4">
                                 <div class="card text-center bg-white shadow">
                                     <i class="fas fa-users    icon"></i>
@@ -68,6 +69,7 @@ include("./includes/header.php");
 
                         <div class="row">
                             <div class="col-lg-12 forms">
+                                <!-- statistics -->
                                 <div id="carouselId" class="carousel slide p-3 mt-4" data-ride="carousel">
                                     <h6 class="text-center">Descriptive statistics</h6>
                                     <p class="text-center" style="font-size: 12px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non temporibus earum accusantium.</p>
@@ -101,10 +103,10 @@ include("./includes/header.php");
                         </div>
                     </div>
                     <div class="col-lg-4 ">
-                        <div class="row shadow rounded p-3">
+                        <div class="row shadow col-12 rounded p-3" id="display3">
                          <!-- user profile -->
                         
-                         <div class="user-profile text-center">
+                         <div class="text-center pl-5" id="profile">
                             <h6 class="text-center">
                                 ADMIN PROFILE
                             </h6>
@@ -122,7 +124,8 @@ include("./includes/header.php");
                                 <h6><?= $row['name'] ?></h6>
                                 <p><?= $row['email']; ?></p>
                             </div>
-                            <input name="" id="" class="btn btn-primary form-control" type="button" value="Edit Profile">
+                            <a href="" id="<?= $row['name'] ?>" class="btn btn-primary profile1 btn-sm" style="width: 100px;">View Profile</a>
+                            
                          </div>
                         <!-- user profile -->
                         <!-- calendar -->

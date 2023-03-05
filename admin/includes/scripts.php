@@ -126,6 +126,52 @@
   
 </script>
 
+<!-- staff -->
+<script>
+
+  $(document).ready(function () {
+    $('.staff').click(function (e) { 
+      e.preventDefault();
+      document.getElementById("mytable").style.display = "none";
+      staff_id = $(this).attr('id');
+      // alert(doc_id);
+
+      $.ajax({
+        method: "post",
+        url: "backend/staff_display.php",
+        data: {id:staff_id},
+        success: function (result) {
+          $('#display2').html(result);
+        }
+      });
+    });
+  });
+  
+</script>
+
+<!-- profile -->
+<script>
+
+  $(document).ready(function () {
+    $('.profile1').click(function (e) { 
+      e.preventDefault();
+      document.getElementById("profile").style.display = "none";
+      name = $(this).attr('id');
+      // alert(doc_id);
+
+      $.ajax({
+        method: "post",
+        url: "backend/profile_display.php",
+        data: {id:name},
+        success: function (result) {
+          $('#display3').html(result);
+        }
+      });
+    });
+  });
+  
+</script>
+
 
 
 

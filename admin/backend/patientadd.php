@@ -59,6 +59,7 @@ else{
 
 if(isset($_POST['update']))
 {
+    $patient_id = $_POST['patient_id'];
     $fname = $_POST['fname'];
     $contact = $_POST['contact'];
     $dob = $_POST['dob'];

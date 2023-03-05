@@ -15,6 +15,9 @@ include("./includes/header.php");
         ?>
 
         <div class="inner-content">
+            <div class="alert alert-warning p-4">
+                <p class="display-5 text-center">This module is still under development</p>
+            </div>
             <table class="table" id="table">
                 <thead>
                     <tr>
