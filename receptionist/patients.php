@@ -96,43 +96,46 @@ include("./includes/header.php");
                     
                     </div>
                 </div>
-                <div class="col-lg-7">
-                    <table class="table p-3" id="table">
-                        <thead>
-                            <tr>
-                                <th>Patient_ID</th>
-                                <th>Name</th>
-                                <th>Contact</th>
-                                <th>Address</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <?php
-                            $select = "select * from patient order by patientID DESC";
-                            $query = $conn->query($select);
-
-                            while($row = $query->fetch_assoc())
-                            {
-                                ?>
+                <div class="col-lg-7" id="display1">
+                    <div id="mytable">
+                        <table class="table p-3" id="table">
+                            <thead>
                                 <tr>
-                                    <td><?= $row['patientID']?></td>
-                                    <td><?= $row['FullNames']?></td>
-                                    <td><?= $row['Contact']?></td>
-                                    <td><?= $row['Address']?></td>
-                                    
-                                    <td>
-                                        <a href="" class="btn btn-info btn-sm" style="font-size: 12px; padding-top: -10px; height:25px;">More ..</a>
-                                    </td>
+                                    <th>Patient_ID</th>
+                                    <th>Name</th>
+                                    <th>Contact</th>
+                                    <th>Address</th>
+                                    <th>Actions</th>
                                 </tr>
+                            </thead>
+                            <?php
+                                $select = "select * from patient order by patientID DESC";
+                                $query = $conn->query($select);
 
-                                <?php
-                            }
-                            ?>
-                               
-                        <tbody>
-                            
-                        </tbody>
-                    </table>
+                                while($row = $query->fetch_assoc())
+                                {
+                                    ?>
+                                    <tr>
+                                        <td><?= $row['patientID']?></td>
+                                        <td><?= $row['FullNames']?></td>
+                                        <td><?= $row['Contact']?></td>
+                                        <td><?= $row['Address']?></td>
+                                        
+                                        <td>
+                                        <a href="" id=<?=$row['patientID']?> class="btn patient btn-info btn-sm" style="font-size: 12px; padding-top: -10px; height:25px;">More ..</a>
+                                        </td>
+                                    </tr>
+
+                                    <?php
+                                }
+                                ?>
+                                
+                            <tbody>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                    
                 </div>
             </div>
         </div>

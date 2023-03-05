@@ -48,6 +48,15 @@
             background-color: rgb(15,15,145);
             color: #fff;
         }
+
+        .logo h5
+        {
+            border: 2px solid #fff;
+            width: 100px;
+            padding: 15px 0;
+            border-radius: 25px;
+            margin-left: 40%;
+        }
     </style>
 </head>
 <body>
@@ -55,6 +64,9 @@
     <div class="container-fluid welcome">
         <div class="row">
             <div class="col-lg-5 message">
+                <div class="logo">
+                    <h5 class="text-center text-white">BCC</h5>
+                </div>
                 <h5 class="text-center text-white">BYEYALE CITIZEN CLINIC</h5>
                 <p class="text-center text-white">Management System</p>
 

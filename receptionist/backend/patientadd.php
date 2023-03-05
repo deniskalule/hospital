@@ -57,7 +57,31 @@ else{
     $_SESSION['error'] = 'Fill up add form first';
 }
 
-header('location: ../patient.php');
+if(isset($_POST['update']))
+{
+    $patient_id = $_POST['patient_id'];
+    $fname = $_POST['fname'];
+    $contact = $_POST['contact'];
+    $dob = $_POST['dob'];
+    $gender = $_POST['gender'];
+    $address = $_POST['address'];
+    $reason = $_POST['reason'];
+    $mod_date = date('y/m/d');
+
+    $update = "update patient set FullNames = '$fname', Contact ='$contact',Date_Of_Birth='$dob',Gender = '$gender', Disease='$reason' where patientID='$patient_id'";
+    if($conn->query($update)){
+        echo "success";
+        $_SESSION['success'] = 'Patient updated successfully';
+    }
+    else{
+        
+        $_SESSION['error'] = 'error';
+    }
+
+
+}
+
+header('location: ../patients.php');
 
 
 ?>

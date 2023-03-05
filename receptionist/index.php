@@ -10,7 +10,13 @@ include("./includes/header.php");
 <div class="row login-section">
     <div class="col-lg-3 col-md-3"></div>
     <div class="col-lg-3 col-md-3 logo-section text-center shadow">
-        <img src="" alt="logo" width="45" height="45">
+        <div class="logo">
+            <h5 class="text-center text-white" style="border: 2px solid #fff;
+            width: 100px;
+            padding: 10px 0;
+            border-radius: 25px;
+            margin-left: 30%; margin-top: -18px;">BCC</h5>
+        </div>
         <p class="text-white">Welcome to Byeyale Citizens Clinic</p>
     </div>
     <div class="col-lg-3 col-md-3 login-form shadow">

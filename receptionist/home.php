@@ -128,7 +128,7 @@ include("./includes/header.php");
                         </div>
                     </div>
                     <div class="col-lg-4 ">
-                        <div class="row shadow rounded p-3" id="display3">
+                        <div class="row shadow rounded p-3" id="display">
                          <!-- user profile -->
                         
                          <div class="user-profile text-center" id="profile">
@@ -149,7 +149,7 @@ include("./includes/header.php");
                                 <h6><?= $row['FullNames'] ?></h6>
                                 
                             </div>
-                            <a href="" id="<?= $row['staffID'] ?>" class="btn btn-primary profile1 btn-sm" style="width: 100px;">View Profile</a>
+                            <a href="" id="<?= $row['staffID'] ?>" class="btn btn-primary profile2 btn-sm" style="width: 100px;">View Profile</a>
 
                          </div>
                         <!-- user profile -->

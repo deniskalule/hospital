@@ -15,7 +15,20 @@ include("./includes/header.php");
         ?>
 
         <div class="inner-content">
-            reports section
+            <div class="alert alert-warning p-2">
+                <p class="display-5 text-center">Module is still under development</p>
+            </div>
+            <table class="table" id="table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                
+                </tbody>
+            </table>
         </div>
 
         <?php

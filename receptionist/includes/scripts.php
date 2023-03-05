@@ -80,21 +80,46 @@
   );
 </script>
 
+<!-- patient -->
+<!-- patient -->
 <script>
 
   $(document).ready(function () {
-    $('.profile1').click(function (e) { 
+    $('.patient').click(function (e) { 
+      e.preventDefault();
+      document.getElementById("mytable").style.display = "none";
+      patient_id = $(this).attr('id');
+      // alert(doc_id);
+
+      $.ajax({
+        method: "post",
+        url: "backend/patient_display.php",
+        data: {id:patient_id},
+        success: function (result) {
+          $('#display1').html(result);
+        }
+      });
+    });
+  });
+  
+</script>
+
+<!-- profile -->
+<script>
+
+  $(document).ready(function () {
+    $('.profile2').click(function (e) { 
       e.preventDefault();
       document.getElementById("profile").style.display = "none";
       staff_id = $(this).attr('id');
-      alert(staff_id);
+      // alert(staff_id);
 
       $.ajax({
         method: "post",
         url: "backend/profile_display.php",
         data: {id:staff_id},
         success: function (result) {
-          $('#display3').html(result);
+          $('#display').html(result);
         }
       });
     });

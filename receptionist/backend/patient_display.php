@@ -53,38 +53,13 @@ if(isset($_POST['id']))
             <div class="buttons mt-3">
                 <hr>
                 <a href="" id="<?= $patient_id ?>" data-toggle="modal" data-target="#edit" class="btn edit btn-info btn-sm"><i class="fas fa-edit    mr-2"></i>Edit</a>
-                <a href="" id="<?= $patient_id ?>" data-toggle="modal" data-target="#delete" class="btn delete btn-danger btn-sm"><i class="fas fa-trash    mr-2"></i>Delete</a>
+                <!-- <a href="" id="<?= $patient_id ?>" data-toggle="modal" data-target="#delete" class="btn delete btn-danger btn-sm"><i class="fas fa-trash    mr-2"></i>Delete</a> -->
 
                 <a href="" class="btn btn-dark btn-sm pull-right"><i class="fa fa-window-close mr-2" aria-hidden="true"></i>Close</a>
             </div>
             <!-- buttons -->
             
-            <!-- Modal for delete -->
-            <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header bg-info">
-                            <h5 class="modal-title">Delete Patient</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                        </div>
-                        <div class="modal-body">
-                            <form action="./backend/patientadd.php" method="post">
-                                <input type="hidden" name= "patient_id" value="<?= $patient_id ?>">
-
-                                <p class="text-center">Are you sure, you want to delete</p>
-                                <div class="modal-footer">
-                                    <button type="submit" name="delete" class="btn btn-success btn-sm">Yes</button>
-                                    <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">no</button>
-                                    
-                                </div>
-                            </form>
-                        </div>
-        
-                    </div>
-                </div>
-            </div>
+            
 
             <!-- Modal for edit -->
             <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
